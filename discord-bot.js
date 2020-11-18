@@ -7,7 +7,6 @@ const {
 } = require('os');
 const bot = new Discord.Client();
 const prefix = '!';
-const token = 'NzYxNjQwOTgxNzgyNTkzNTc2.X3djcA.zRqNM_5S5Fjzu2-L39oCRFkoPpg';
 const josh_id = '675120965314805760';
 const shawk_id = '456768469262794765';
 const adi_id = '616898988066734080';
@@ -142,4 +141,4 @@ bot.on('message', msg => {
     }
 })
 
-bot.login(token);
+bot.login(process.env.CONFIG_TOKEN);

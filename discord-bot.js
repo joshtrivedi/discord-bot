@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const { EOF } = require('dns');
 const {
     EventEmitter
 } = require('events');
@@ -27,7 +28,7 @@ bot.on('ready', () => {
 })
 bot.on('message', msg => {
     if (msg.content.substring(0, 1) == '!') {
-        if ((msg.member.roles.cache.has(emote_king)) && (msg.content.substring(1).split(" ")[0] == "purge" )) {
+        if ((msg.member.roles.cache.has(emote_king) || msg.member.roles.cache.has(emote_queen)) && (msg.content.substring(1).split(" ")[0] == "purge" )) {
             var num = msg.content.substring(1).split(" ")[1];
             if (isNaN(num)) msg.reply("the argument that you entered after the command isn't a number");
             else {
@@ -38,9 +39,6 @@ bot.on('message', msg => {
             }
         }
     }
-})
-
-bot.on('message', msg => {
     if (msg.content.toLowerCase() === "simp") {
         msg.react('776223420975284274');
         msg.channel.send('<:nou:776223420975284274>');
@@ -87,24 +85,25 @@ bot.on('message', msg => {
         } else {
             msg.reply('hi cutie');
         }
-
-        if (msg.content.toLowerCase() === "cute" && msg.author.id === sania_id) {
-            msg.reply('yes u too Sania');
-        } else if (msg.content.toLowerCase() === "cute") {
-            msg.reply('no, u');
-        }
-
-        if (msg.content.toLowerCase() === "hot") {
-            if (msg.author.id === sabah_id) {
-                msg.reply('hi, sabah-hottie, wink wink');
-            } else {
-                msg.reply('u not sabah, gtfo');
-            }
+    }
+    if (msg.content.toLowerCase() === "cute" && msg.author.id === sania_id) {
+        msg.reply('yes u too Sania');
+    } else if (msg.content.toLowerCase() === "cute") {
+        msg.reply('no, u');
+    }
+    if (msg.content.toLowerCase() === "hot") {
+        if (msg.author.id === sabah_id) {
+            msg.reply('hi, sabah-hottie, wink wink');
+        } else {
+            msg.reply('u not sabah, gtfo');
         }
     }
-})
-
-bot.on('message', msg => {
+    /*if (msg.content.toLowerCase().substring(0,14) === "happy birthday" ){
+        var index = msg.content.toLowerCase().indexOf("<@!");
+        var index_l = msg.content.toLowerCase().indexOf(">") + 1;
+        var tag = msg.content.toLowerCase().substring(index,index_l);
+        msg.channel.send('THANK YOU, from - '+tag);
+    }*/    
     if (msg.content.toLowerCase() === "ew") {
         if (msg.author.id === josh_id) {
             msg.reply('stfu king');
@@ -122,9 +121,6 @@ bot.on('message', msg => {
             msg.reply("fuck u want shagun, go text your hoes");
         }
     }
-})
-
-bot.on('message', msg => {
     if (msg.content.toLowerCase() === "") {
         if (msg.channel.id === "774275138257420329") {
             if ((msg.author.id === shawk_id) || (msg.author.id === sabah_id) || (msg.author.id === '729784115422953594')) {
@@ -139,6 +135,17 @@ bot.on('message', msg => {
             }
         }
     }
+    if(msg.content.toLowerCase().includes("happy birthday")){
+        var index = msg.content.toLowerCase().indexOf("<@!");
+        var index_l = msg.content.toLowerCase().indexOf(">") + 1;
+        var tag = msg.content.toLowerCase().substring(index,index_l);
+        if(msg.content.toLowerCase().includes(tag)){
+            msg.channel.send("Thank you, from - "+tag);
+        }else{
+            console.log('ew trash');
+        }
+    }
 })
 
-bot.login(process.env.CONFIG_TOKEN);
+
+bot.login('NzYxNjQwOTgxNzgyNTkzNTc2.X3djcA.c-ZM_fYcbkF9yKNW09Auw99Ke2I');

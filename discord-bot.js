@@ -145,6 +145,9 @@ bot.on('message', msg => {
             console.log('ew trash');
         }
     }
+    if(msg.content.toLowerCase() === "what"){
+        msg.channel.send('you hot');
+    }
 })
 
 

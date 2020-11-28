@@ -124,7 +124,7 @@ bot.on('message', msg => {
             msg.reply("MS QUISHA, MS QUISHA");
         }
     }
-    if (msg.content.toLowerCase() === "MS QUISHA, MS QUISHA"){
+    if (msg.content.toLowerCase() === "omfg"){
         msg.channel.send("omfg she fucking dead");
     }
     if (msg.content.toLowerCase() === "") {

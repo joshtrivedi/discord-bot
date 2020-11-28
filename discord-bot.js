@@ -21,6 +21,7 @@ const issane_id = '328654454700376075';
 const emote_king = '773983765499346944';
 const emote_queen = '773983667324321844';
 const shagun_id = '381580503943217152';
+const quisha_id = '274229654439591936';
 EventEmitter;
 
 bot.on('ready', () => {
@@ -119,7 +120,12 @@ bot.on('message', msg => {
             msg.reply("no, u hottie");
         } else if (msg.author.id === shagun_id) {
             msg.reply("fuck u want shagun, go text your hoes");
+        } else if (msg.author.id === quisha_id) {
+            msg.reply("MS QUISHA, MS QUISHA");
         }
+    }
+    if (msg.content.toLowerCase() === "MS QUISHA, MS QUISHA"){
+        msg.channel.send("omfg she fucking dead");
     }
     if (msg.content.toLowerCase() === "") {
         if (msg.channel.id === "774275138257420329") {

@@ -111,7 +111,7 @@ bot.on('message', msg => {
         } else if (msg.author.id === shawk_id) {
             msg.reply('what did u think i would simp for you? lol gtfo');
         } else if (msg.author.id === sania_id) {
-            msg.reply('sania. did u look into a mirror?');
+            msg.reply('no sania, your ex was ew, you a queen');
         } else if (msg.author.id === gulsah_id) {
             msg.reply('no gg, u queen');
         } else if (msg.author.id === pras_id) {

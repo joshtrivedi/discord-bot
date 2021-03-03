@@ -15,4 +15,6 @@ bot.on('ready', () => {
     console.log('This bot is working');
 })
 
+
+
 bot.login(process.env.CONFIG_TOKEN);

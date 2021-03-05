@@ -39,6 +39,7 @@ bot.on('message', async (msg) => {
     } else if (command === 'help') {
         let noOfCommands = "Available commands: \n"
         const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'))
+        //TODO needs to send command name
         for (const file of commandFiles) {
             const command = require(`./commands/${file}`)
             noOfCommands += (prefix + command.name, " : ", command.description+"\n")

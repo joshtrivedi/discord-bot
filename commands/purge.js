@@ -3,6 +3,7 @@ const moderator_role = require('../config.json')
 module.exports = {
     name: "purge",
     description: "Delete certain number of commands",
+    access: "mods",
     async execute(msg, args) {
         if (msg.content.substring(0, 1) == '!') {
             if ((msg.member.roles.cache.find(m => m.name.toLowerCase() === moderator_role))) {

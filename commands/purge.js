@@ -7,7 +7,8 @@ const {
 
 module.exports = {
     name: "purge",
-    description: "Delete certain number of commands",
+    description: "Delete certain number of messages",
+    access: "moderators",
     async execute(msg, args) {
         if(!args.length === 1){
             msg.channel.send('Please enter only one argument!')
@@ -19,7 +20,7 @@ module.exports = {
             else {
                 msg.channel.bulkDelete(num, true).catch(err => {
                     console.error(err);
-                    msg.channel.send('there was a problem pruning messages from this channel');
+                    msg.channel.send('there was a problem pruning messages from this channel')
                 })
             }
         }else{

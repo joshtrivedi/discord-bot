@@ -12,7 +12,8 @@ const {
 const {
     userInfo
 } = require('os');
-const fs = require('fs')
+const fs = require('fs');
+const polls = require('./polls');
 const bot = new Discord.Client();
 
 
@@ -26,6 +27,7 @@ for (const file of commandFiles) {
 
 bot.on('ready', () => {
     console.log('This bot is working');
+    polls(bot);
 })
 
 bot.on('message', async (msg) => {

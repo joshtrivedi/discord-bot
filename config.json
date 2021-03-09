@@ -1,5 +1,6 @@
 {
     "prefix" : "!",
     "moderator_role":["admin","obama","emote-queen","emote-king"],
-    "testing_channel":["816622008002805768","771833401618726933"]
+    "testing_channel":["816622008002805768","771833401618726933"],
+    "polls_channel" : ["818854844886417458","818859995315568660"]
 }

@@ -11,6 +11,13 @@ function isEmojifromJSON(args) {
     else return false
 }
 
+function isEmojiUnicode(args) {
+    const matched =
+    emojis.find(element => element.char === args)
+    if(matched) return args
+    else return false
+}
+
 module.exports = (bot) => {
     bot.on('message',msg => {
         const {
@@ -23,10 +30,12 @@ module.exports = (bot) => {
         const eachLine = content.split('\n');
         for (const line of eachLine) {
             const split = line.split(' ')
-            const emoji = split[0].trim()
-            if(!isEmojifromJSON(emoji)) continue
+            var emoji = split[0].trim()
+            if(emoji.startsWith('\ '.trim())) emoji = emoji.substring(1,emoji.length)
+            if(!isEmojiUnicode(emoji)) continue
 
-            msg.react(emoji)
+            msg.react(isEmojiUnicode(emoji))
+
         }
     })
 }

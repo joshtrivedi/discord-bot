@@ -14,6 +14,7 @@ const {
 } = require('os');
 const fs = require('fs');
 const polls = require('./polls');
+const newPolls = require('./new-polls')
 const bot = new Discord.Client();
 
 
@@ -88,7 +89,6 @@ bot.on('message', async (msg) => {
         bot.commands.get('motivation').execute(msg, args)
     }
 })
- 
 
 
 bot.login(process.env.CONFIG_TOKEN);

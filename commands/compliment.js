@@ -55,6 +55,10 @@ compliments[49] = "You are making a difference."
 compliments[50] = "You deserve a hug right now."
 compliments[51] = "You're a great example to others."
 compliments[52] = "Actions speak louder than words, and yours tell an incredible story."
+compliments[53] = "You are what makes me feel thankful for life everyday."
+compliments[54] = "Sometimes I wish others could see you like the way I do, but then I just think its fun keeping the people who get Art less"
+compliments[55] = "Look into the mirror and say 'Oh My God you are stunning' for me please"
+compliments[56] = "You are worth it."
 
 module.exports = {
     name: "compliment",

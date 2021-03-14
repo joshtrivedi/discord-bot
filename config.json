@@ -1,6 +1,7 @@
 {
     "prefix" : "!",
     "moderator_role":["admin","obama","emote-queen","emote-king"],
+    "member_role":["member","peasant king","peasant queen","rose","duck queen","mafe"],
     "timeout_role":["josh's bitch"],
     "testing_channel":["816622008002805768","771833401618726933","779355793468162048"],
     "polls_channel" : ["818854844886417458","818859995315568660"]

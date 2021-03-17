@@ -31,7 +31,6 @@ module.exports = {
             }catch(e){
                 console.log(e)
             }
-            
         }else{
             msg.channel.send('Wrong format, please use format `!timeout user time`')
         }

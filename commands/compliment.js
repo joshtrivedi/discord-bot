@@ -62,7 +62,7 @@ compliments[56] = "You are worth it."
 
 module.exports = {
     name: "compliment",
-    description: "complimets for everyone!",
+    description: "compliments for everyone!",
     access: "everyone",
     async execute (msg, args){
         var com = getRandomInt(compliments.length)

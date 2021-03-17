@@ -80,7 +80,7 @@ bot.on('message', async (msg) => {
     } else if (command === 'mute') {
         bot.commands.get('mute').execute(msg, args)
     } else if (command === 'ban') {
-        bot.commands.get('ban').execute(msg, args)
+        bot.commands.get('ban').execute(bot,msg, args)
     } else if (command === 'timeout') {
         bot.commands.get('timeout').execute(msg,args)
     } else if (command === 'compliment') {

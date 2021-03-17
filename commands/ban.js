@@ -16,6 +16,7 @@ module.exports = {
         } = msg
         let mod = msg.member.roles.cache.find(r=>moderator_role.includes(r.name.toLowerCase()))
         if(!mod) return*/
+        //TODO Add dm message for ban
         if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('You can\'t use that!')
         if(!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send('I don\'t have the right permissions.')
 

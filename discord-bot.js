@@ -90,5 +90,10 @@ bot.on('message', async (msg) => {
     }
 })
 
+bot.on('message', msg=> {
+    if(msg.content.toLowerCase() === 'f'){
+        msg.react('🇫')
+    }
+})
 
 bot.login(process.env.CONFIG_TOKEN);

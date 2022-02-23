@@ -14,7 +14,8 @@ const {
 } = require('os');
 const fs = require('fs');
 const polls = require('./polls');
-const newPolls = require('./new-polls')
+const newPolls = require('./new-polls');
+const something = require('./something');
 const bot = new Discord.Client();
 
 
@@ -29,6 +30,7 @@ for (const file of commandFiles) {
 bot.on('ready', () => {
     console.log('This bot is working');
     polls(bot);
+    //something(bot);
 })
 
 bot.on('message', async (msg) => {
@@ -49,7 +51,6 @@ bot.on('message', async (msg) => {
                 case 'access':
                     let filtered_everyone = '**Commands accessible to everyone:** \n'
                     let filtered_mods = '**Commands accessible to mods:** \n'
-                    //const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'))
                     for (const file of commandFiles) {
                         const command = require(`./commands/${file}`)
                         if(command.access === 'everyone'){
@@ -57,7 +58,6 @@ bot.on('message', async (msg) => {
                         } else if (command.access === 'moderators'){
                             filtered_mods += ("`"+command.name+" `: "+command.description+"\n")
                         }
-                        //noOfCommands += (command.name+" : "+command.description+" : ` access : "+command.access+"`\n")
                     }
                     msg.channel.send(filtered_everyone)
                     msg.channel.send(filtered_mods)
@@ -87,6 +87,8 @@ bot.on('message', async (msg) => {
         bot.commands.get('compliment').execute(msg, args)
     } else if (command === 'mv' || command === 'motivation') {
         bot.commands.get('motivation').execute(msg, args)
+    } else if (command === "addemoji") {
+        bot.commands.get('addemoji').execute(msg, args)
     }
 })
 

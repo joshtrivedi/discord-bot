@@ -28,21 +28,26 @@ module.exports = {
     name: "addemoji",
     description: "Add emoji to server guild",
     access: "moderators",
-    async execute (msg,args){
-        
+    async execute (msg, args){
+        [arg,emojiname] = args
         if (!msg.member.roles.cache.find(((m) => moderator_role.find(f=>f.includes(m.name.toLowerCase()))))){
             return msg.channel.send("You cannot use that command peasant you are not a mod lmao")
         }
-        if (!args.length) {return msg.channel.send("Bruh specify an emoji tf am i supposed to add"); }
+        if (!arg.length) {return msg.channel.send("Bruh specify an emoji tf am i supposed to add"); }
 
-        if (args.length == 2) {return msg.channel.send("Bruh one emoji at a time tf")}
+        //if (args.length == 2) {return msg.channel.send("Bruh one emoji at a time tf")}
+        if (!emojiname) return msg.channel.send("Bruh tell me the name of the emoji")
 
-        if (!checkEmoji(args)){
+        if (!checkEmoji(arg)){
             return msg.channel.send("Bruh this isnt a valid emoji")
         }
-
-        await msg.member.guild.emojis.create((!!emojiReg(args) ? emojiReg(args) : gifReg(args)), "testemoji")
-        .then (emoji => console.log(`Created emoji with name ${emoji.name}`))
+        console.log(typeof emojiname)
+        console.log(typeof (!!emojiReg(arg) ? emojiReg(arg) : gifReg(arg)))
+        await msg.member.guild.emojis.create((!!emojiReg(arg) ? emojiReg(arg) : gifReg(arg)), emojiname)
+        .then (emoji => {
+            console.log(`Created emoji with name ${emoji.name}`)
+            msg.channel.send(`Created emoji ${emoji}`)
+        })
         .catch(console.error);
         
     }

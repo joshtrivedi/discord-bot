@@ -30,7 +30,7 @@ for (const file of commandFiles) {
 bot.on('ready', () => {
     console.log('This bot is working');
     polls(bot);
-    //something(bot);
+    something(bot);
 })
 
 bot.on('message', async (msg) => {
@@ -88,7 +88,7 @@ bot.on('message', async (msg) => {
     } else if (command === 'mv' || command === 'motivation') {
         bot.commands.get('motivation').execute(msg, args)
     } else if (command === "addemoji") {
-        bot.commands.get('addemoji').execute(msg, args)
+        bot.commands.get('addemoji').execute(msg,args)
     }
 })
 
